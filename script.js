@@ -51,7 +51,7 @@ class Produto {
       }
  }
 
- const produto = new Produto("Photocards", "27/06", "Photocard aleatório", "40", "");
- console.log(produto.retornar_mostrarProdutos());
+ const produtoDois = new Produto("Photocards", "27/06", "Photocard aleatório", "40", "");
+ console.log(produtoDois.retornar_mostrarProdutos());
 
-//continuar código//
+//faltando um conteúdo, pois não foi compreendido//
