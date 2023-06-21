@@ -1,3 +1,10 @@
+class Erro extends Error {
+    constructor(message){
+        super(message);
+        this.name = "Erro";
+    }
+}
+
 class Produto {
     constructor(nome, dataCadastro, descricao, preco){
         this.nome = nome;
@@ -6,40 +13,45 @@ class Produto {
         this.preco = preco
     }
 
-    mostrar_produto(){
-        return `<div> ${this.nome} </div>,
-                <div> ${this.dataCadastro} </div>,
-                <div> ${this.descricao} </div>,
-                <div> ${this.preco} </div>`
-    }
- }
+    mostrar_produtos(){
+        return {
+            nome: this.nome,
+            dataCadastro: this.dataCadastro,
+            descricao: this.descricao,
+            preco: this.preco
+      }
+   }
+}
 
-    //Herança//
-    
  class ProdutosDestaque extends Produto {
     constructor(){
         super(nome, dataCadastro, descricao, preco, Image)
     }
 
-    mostrar_produtoDestaque(){
-        return `<div> ${this.nome} </div>,
-        <div> ${this.dataCadastro} </div>,
-        <div> ${this.descricao} </div>,
-        <div> ${this.preco} </div>,
-        <div> ${this.Image} </div>`
+    retornar_mostrarProdutos() {
+        try{
+         return this.mostrar_produtosDestaque();   
+        } catch (error) {
+            return error
+        }
     }
+
+    mostrar_produtoDestaque(){
+        if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != "" && this.image != ""){
+            return {
+                nome: this.nome,
+                dataCadastro: this.dataCadastro,
+                descricao: this.descricao,
+                preco: this.preco,
+                Image: this.image
+          }
+         } else {
+            throw new Erro("Há atributo vazio.")
+        }
+      }
  }
 
- //const produto = new Produto();//
- //const produtoDestaque = new ProdutosDestaque();//
+ const produto = new Produto("Photocards", "27/06", "Photocard aleatório", "40", "");
+ console.log(produto.retornar_mostrarProdutos());
 
- const produtosTwo = new Produto("Photocards", "27/06", "Photocards aleatórios", "40,00");
-
- //git init//
-
- //let produtosDest = document.getElementById("produto-destaque")//
-
- let produtos = document.getElementById("lista-produtos");
-
- //produtosDest.insertAdjacentHTML('afterbegin', 'mostrar_produtoDestaque')//
- produtos.insertAdjacentHTML('afterbegin',produtosTwo.mostrar_produto());
+//continuar código//
