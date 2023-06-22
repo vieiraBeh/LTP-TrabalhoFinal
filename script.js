@@ -33,7 +33,7 @@ class Produto {
      }
   }
 }
- class ProdutosDestaque extends Produto {
+ class ProdutoDestaque extends Produto {
     constructor(nome, dataCadastro, descricao, preco, imageDest){
         super(nome, dataCadastro, descricao, preco);
         this.imageDest = imageDest
@@ -48,7 +48,7 @@ class Produto {
     }
 
     mostrar_produtoDestaque(){
-        if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != ""){
+        if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != "" && this.imageDest != ""){
             return `<div>${this.nome}</div>
           <img style src = "${this.imageDest}" alt = "imagem destaque"></img>
           <p>${this.dataCadastro}</p>
@@ -59,7 +59,7 @@ class Produto {
         } 
  
 
- const produtoUm = new ProdutosDestaque("Photocards", "27/06","Photocards aleatórios","40,00","https://www.google.com/url?sa=i&url=https%3A%2F%2Fshopee.com.br%2F55pcs-Caixa-Stray-Kids-Photocards-MANIAC-JAPAN-ENCORE-%25C3%2581lbum-LOMO-Cart%25C3%25A3o-Postal-%2528READY-STOCK%2529-i.711517700.22935003129&psig=AOvVaw1JiA0vl4OltPFlvlNKfrh6&ust=1687483545238000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiq_aTc1f8CFQAAAAAdAAAAABBQ");
+ const produtoUm = new ProdutoDestaque("Photocards", "27/06","Photocards aleatórios","40,00","https://www.google.com/url?sa=i&url=https%3A%2F%2Fshopee.com.br%2F55pcs-Caixa-Stray-Kids-Photocards-MANIAC-JAPAN-ENCORE-%25C3%2581lbum-LOMO-Cart%25C3%25A3o-Postal-%2528READY-STOCK%2529-i.711517700.22935003129&psig=AOvVaw1JiA0vl4OltPFlvlNKfrh6&ust=1687483545238000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiq_aTc1f8CFQAAAAAdAAAAABBQ");
  const produtoDois = new Produto("Photocards", "27/06","Photocards aleatórios","40,00");
  
  let produto_destaque = document.getElementById("produto-destaque");
