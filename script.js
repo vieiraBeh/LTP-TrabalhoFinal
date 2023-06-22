@@ -50,10 +50,10 @@ class Produto {
     mostrar_produtoDestaque(){
         if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != ""){
             return `<div>${this.nome}</div>
-          <div>${this.dataCadastro}</div>
-          <div>${this.descricao}</div>
-          <div>${this.preco}</div>
-          <div>${this.imageDest}</div>`
+          <img style src = "${this.imageDest}" alt = "imagem destaque"></img>
+          <p>${this.dataCadastro}</p>
+          <h3>${this.descricao}</h3>
+          <h2>${this.preco}</h2>`
           }
          }
         } 
