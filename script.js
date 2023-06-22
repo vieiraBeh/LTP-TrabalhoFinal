@@ -34,26 +34,36 @@ class Produto {
   }
 }
  class ProdutosDestaque extends Produto {
-    constructor(){
-        super(nome, dataCadastro, descricao, preco, imageDest)
+    constructor(nome, dataCadastro, descricao, preco, imageDest){
+        super(nome, dataCadastro, descricao, preco);
+        this.imageDest = imageDest
+    }
+
+    retornar_produtoDestaque(){
+        try{
+            return this.mostrar_produtoDestaque();
+        } catch (error) {
+            return error
+        }
     }
 
     mostrar_produtoDestaque(){
+        if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != ""){
             return `<div>${this.nome}</div>
           <div>${this.dataCadastro}</div>
           <div>${this.descricao}</div>
           <div>${this.preco}</div>
           <div>${this.imageDest}</div>`
           }
-         } 
+         }
+        } 
  
 
- //const produto = new ProdutoDestaque ("Album Face", "03-05","Album Kpop","150,00","www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-08-600x568.png")
+ const produtoUm = new ProdutosDestaque("Photocards", "27/06","Photocards aleatórios","40,00","https://www.google.com/url?sa=i&url=https%3A%2F%2Fshopee.com.br%2F55pcs-Caixa-Stray-Kids-Photocards-MANIAC-JAPAN-ENCORE-%25C3%2581lbum-LOMO-Cart%25C3%25A3o-Postal-%2528READY-STOCK%2529-i.711517700.22935003129&psig=AOvVaw1JiA0vl4OltPFlvlNKfrh6&ust=1687483545238000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiq_aTc1f8CFQAAAAAdAAAAABBQ");
  const produtoDois = new Produto("Photocards", "27/06","Photocards aleatórios","40,00");
- //git init//
  
- //let produtosDest = document.getElementById("produto-destaque")
+ let produto_destaque = document.getElementById("produto-destaque");
  let produtos = document.getElementById("lista-produtos");
  
- //produtosDest.insertAdjacentHTML('afterbegin', 'mostrar_produtos_destaque');
+ produto_destaque.insertAdjacentHTML('afterbegin',produtoUm.mostrar_produtoDestaque());
  produtos.insertAdjacentHTML('afterbegin', produtoDois.mostrar_produtos());
