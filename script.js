@@ -23,7 +23,7 @@ class Produto {
 
     mostrar_produtos() {
      if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != "") {
-         return `<div class = "lista de produtos">
+         return `<div class = "lista-produtos">
             <h1>${this.nome}</h1>
             <p>${this.dataCadastro}</p>
             <h3>${this.descricao}</h3>
@@ -51,7 +51,7 @@ class Produto {
 
     mostrar_produtoDestaque() {
         if(this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != "" && this.imageDest != ""){
-         return `<div class = "produto destaque">
+         return `<div class = "produto-destaque">
           <h1>${this.nome}</h1>
           <img style src = "${this.imageDest}" alt = "imagem destaque"></img>
           <p>${this.dataCadastro}</p>
@@ -66,8 +66,8 @@ class Produto {
  const produtoUm = new ProdutoDestaque("Photocards", "27/06","Photocards aleatórios","40,00","https://www.google.com/url?sa=i&url=https%3A%2F%2Fshopee.com.br%2F55Pcs-Box-Stray-Kids-Photocards-Stay-In-STAY-Album-LOMO-Card-Postcard-i.540242560.12497868142&psig=AOvVaw1JiA0vl4OltPFlvlNKfrh6&ust=1687483545238000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiq_aTc1f8CFQAAAAAdAAAAABBf");
  const produtoDois = new Produto("Photocards", "27/06","Photocards aleatórios","40,00");
  
- let produto_destaque = document.getElementById("produto destaque");
- let produtos = document.getElementById("lista de produtos");
+ let produto_destaque = document.getElementById("produto-destaque");
+ let produtos = document.getElementById("lista-produtos");
  
  produto_destaque.insertAdjacentHTML('afterbegin',produtoUm.mostrar_produtoDestaque());
  produtos.insertAdjacentHTML('afterbegin', produtoDois.mostrar_produtos());
